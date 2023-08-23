@@ -1,0 +1,11 @@
+
+
+<<<<<<< HEAD
+- Entregar tarea-examen Calculo en rama calculo
+
+- Estudiar para examen de Calculo en rama calculo
+=======
+- Se cambia linea completa
+
+- Estudiar para examen de Calculo y Manejo de Datos
+>>>>>>> master
