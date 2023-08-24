@@ -16,7 +16,7 @@ class Racional(ABC):
         pass
 
     @abstractmethod
-    def operar(self, otro):
+    def operar(self, otro, operacion):
         pass
 
     def __str__(self):
@@ -28,9 +28,16 @@ class RacionalDecimal(Racional):
             return a
         return self.gcd(b, a % b)
 
-    def operar(self, otro):
-        nuevo_p = self.p * otro.q + otro.p * self.q
+    def operar(self, otro, operacion):
         nuevo_q = self.q * otro.q
+
+        if operacion == "+":
+            nuevo_p = self.p * otro.q + otro.p * self.q
+        elif operacion == "/":
+            nuevo_p = self.p * otro.q
+            nuevo_q = self.q * otro.p
+        elif 
+
         return RacionalDecimal(nuevo_p, nuevo_q)
 
 num1 = input("Ingrese el primer número racional (p/q): ")
@@ -42,5 +49,6 @@ p2, q2 = map(int, num2.split('/'))
 racional1 = RacionalDecimal(p1, q1)
 racional2 = RacionalDecimal(p2, q2)
 
-resultado = racional1.operar(racional2)
+operacion = input("Ingrese la operación (+ o /): ")
+resultado = racional1.operar(racional2, operacion)
 print("Resultado:", resultado)
